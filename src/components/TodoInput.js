@@ -6,7 +6,14 @@ class TodoInput extends React.Component {
   };
 
   handleClick = () => {
-    this.props.onAdd(this.state.input);
+    const { input } = this.state;
+
+    if (input.trim() === "") {
+      return;
+    }
+
+    this.props.onAdd(input);
+    this.setState({ input: "" });
   }
 
   handleChange = event => {
@@ -22,6 +29,7 @@ class TodoInput extends React.Component {
         <input 
           value={input}
           onChange={handleChange}
+          placeholder="Input here"
         />
         <button onClick={handleClick}>
           +
