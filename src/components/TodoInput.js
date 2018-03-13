@@ -6,7 +6,7 @@ class TodoInput extends React.Component {
   };
 
   handleClick = () => {
-    console.log(this.state.input);
+    this.props.onAdd(this.state.input);
   }
 
   handleChange = event => {
