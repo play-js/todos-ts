@@ -1,7 +1,7 @@
 # [Todos TS](https://github.com/play-js/todos-ts)
 Todos by TS
 
-## [Demo](https://play-js.github.io/project/)
+## [Demo](https://play-js.github.io/todos-ts)
 
 <!-- ![demo.png](demo.png) -->
 
