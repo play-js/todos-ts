@@ -20,9 +20,15 @@ class TodoInput extends React.Component {
     this.setState({ input: event.target.value });
   }
 
+  handleKeyDown = event => {
+    if (event.key === "Enter") {
+      this.handleClick();
+    }
+  }
+
   render () {
     const { input } = this.state;
-    const { handleClick, handleChange } = this;
+    const { handleClick, handleChange, handleKeyDown } = this;
 
     return (
       <React.Fragment>
@@ -30,6 +36,7 @@ class TodoInput extends React.Component {
           value={input}
           onChange={handleChange}
           placeholder="Input here"
+          onKeyDown={handleKeyDown}
         />
         <button onClick={handleClick}>
           +
