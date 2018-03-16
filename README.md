@@ -3,7 +3,7 @@ Todos by TS
 
 ## [Demo](https://play-js.github.io/todos-ts)
 
-<!-- ![demo.png](demo.png) -->
+![demo.png](demo.png)
 
 ## Prerequisites
 - Node.js >= 8.x (Recommended the latest version)
