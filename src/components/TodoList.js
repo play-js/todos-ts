@@ -1,21 +1,26 @@
 import React from 'react';
+// Material UI
+import List, { ListItem, ListItemText } from 'material-ui/List';
+import Checkbox from 'material-ui/Checkbox';
 
 class TodoList extends React.Component {
   render() {
     const { data } = this.props;
 
     return (
-      <ul>
+      <List component="nav">
         {data.map((todo, index) =>
-          <li
-            /** 아래 key 값의 차이는 무엇일까? */
-            // key={index}
+          <ListItem
+            button
             key={todo.id}
           >
-            {todo.text}
-          </li>
+            <Checkbox
+              // checked={true}
+            />
+            <ListItemText primary={todo.text} />
+          </ListItem>
         )}
-      </ul>
+      </List>
     );
   }
 }

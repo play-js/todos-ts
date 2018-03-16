@@ -1,4 +1,17 @@
 import React from 'react';
+// Material UI
+import { withStyles } from 'material-ui/styles';
+import Button from 'material-ui/Button';
+import Input from 'material-ui/Input';
+
+const styles = {
+  root: {
+    display: 'flex',
+  },
+  item: {
+    flex: 1,
+  },
+};
 
 class TodoInput extends React.Component {
   state = {
@@ -27,23 +40,31 @@ class TodoInput extends React.Component {
   }
 
   render () {
+    const { classes } = this.props;
     const { input } = this.state;
     const { handleClick, handleChange, handleKeyDown } = this;
 
     return (
-      <React.Fragment>
-        <input 
+      <div className={classes.root}>
+        <Input
+          className={classes.item}
           value={input}
           onChange={handleChange}
           placeholder="Input here"
           onKeyDown={handleKeyDown}
+          autoFocus
         />
-        <button onClick={handleClick}>
+        <Button
+          // className={classes.item}
+          variant="raised"
+          color="primary"
+          onClick={handleClick}
+        >
           +
-        </button>
-      </React.Fragment>
+        </Button>
+      </div>
     );
   }
 }
 
-export default TodoInput;
+export default withStyles(styles)(TodoInput);
